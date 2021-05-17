@@ -49,6 +49,7 @@ def draw_rods():
         turtle.up()
         turtle.goto(turtle.screensize()[0] * i, 0)
         turtle.down()
+        turtle.begin_fill()
         turtle.left(180)
         turtle.forward(ROD_WIDTH / 2)
         turtle.right(90)
@@ -59,6 +60,7 @@ def draw_rods():
         turtle.forward(ROD_HEIGHT)
         turtle.right(90)
         turtle.forward(ROD_WIDTH / 2)
+        turtle.end_fill()
     pass
 
 
