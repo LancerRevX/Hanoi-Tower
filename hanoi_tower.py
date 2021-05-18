@@ -24,7 +24,7 @@ def draw_disk(rod_index, disk_size, disk_index):
     turtle.fillcolor(colors[disk_size - 1 % len(colors)])
     turtle.seth(0)
     turtle.up()
-    turtle.goto(turtle.screensize()[0] * (rod_index - 1), DISK_HEIGHT * disk_index)
+    turtle.goto(turtle.screensize()[0] / 3 * (rod_index - 1), DISK_HEIGHT * disk_index)
     turtle.down()
     turtle.begin_fill()
     disk_width = FIRST_DISK_WIDTH * (1 + 0.5 * (disk_size - 1))
@@ -47,7 +47,7 @@ def draw_rods():
     for i in [-1, 0, 1]:
         turtle.seth(0)
         turtle.up()
-        turtle.goto(turtle.screensize()[0] * i, 0)
+        turtle.goto(turtle.screensize()[0] / 3 * i, 0)
         turtle.down()
         turtle.begin_fill()
         turtle.left(180)
@@ -94,6 +94,8 @@ def move_tower(from_rod_index, to_rod_index, lower_disk_depth):
         move_tower(free_rod_index, to_rod_index, lower_disk_depth - 1)
     pass
 
+turtle.screensize(600, 300)
+turtle.setup(800, 500)
 
 draw_towers()
 turtle.update()
